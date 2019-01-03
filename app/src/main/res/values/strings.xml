@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Analytics Tutorial</string>
+
+    <string name="title_activity_main">Vpon Analytics Tutorial</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="label_license_key">License Key</string>
+    <string name="label_custom_id">Custom Id</string>
+    <string name="label_extra_data">Extra Data(event payload)</string>
+    <string name="label_btn_send_event">send event</string>
+    <string name="label_btn_reset">reset</string>
+
+    <string-array name="events">
+        <item>{Please select event}</item>
+        <item>login</item>
+        <item>page_view</item>
+        <item>category_view</item>
+        <item>item_view</item>
+        <item>add_to_cart</item>
+        <item>checkout</item>
+        <item>element_interact</item>
+        <item>search</item>
+        <item>custom</item>
+    </string-array>
+
+    <string name="title_select_event">Please select event</string>
+
+</resources>

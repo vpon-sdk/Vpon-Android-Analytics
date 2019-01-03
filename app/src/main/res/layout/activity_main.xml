@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        tools:layout_height="match_parent">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/ie_license_key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_license_key" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/ie_custom_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_custom_id" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:padding="10dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/ie_extra_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/label_extra_data"
+                android:textAlignment="textStart" />
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_send_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/label_btn_send_event"
+                tools:ignore="ButtonStyle"
+                android:background="@android:color/holo_blue_light"
+                android:layout_margin="5dp"
+                android:onClick="fireButton"/>
+
+            <Button
+                android:id="@+id/btn_reset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/label_btn_reset"
+                tools:ignore="ButtonStyle"
+                android:background="@android:color/holo_orange_dark"
+                android:layout_margin="5dp"
+                android:onClick="fireButton"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
