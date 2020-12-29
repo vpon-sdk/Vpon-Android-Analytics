@@ -4,21 +4,16 @@
     package="com.vpadn.analytics">
 
     <!-- Mandatory permission, INTERNET -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <!-- Permissions below are all optional, please choose your own selection -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-
-    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
 
     <application
         android:allowBackup="true"
@@ -29,11 +24,6 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
-        <!-- Only for include google ad sdk, please replace with your own configuration -->
-        <meta-data
-            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-            android:value="true"/>
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,5 +32,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
