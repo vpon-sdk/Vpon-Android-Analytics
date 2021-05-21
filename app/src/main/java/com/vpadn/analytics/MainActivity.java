@@ -59,13 +59,15 @@ public class MainActivity extends AppCompatActivity {
             requestPermissions(new String[]{ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_PHONE_STATE}, PERMISSION_REQUEST_CODE);
         }
 
+
         VpdataAnalytics vpdataAnalytics = VpdataAnalytics.INSTANCE;
 
         //just for debug mode, remember to set to false before app release!!!
         //need to be set before vpdataAnalytics.initialize
         vpdataAnalytics.setDebugMode(true);
 
-        vpdataAnalytics.initialize(this, licenseKey, customerId);
+        //set VpdataAnalytics.OptIn according to users agreement
+        vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT);
 
         initViews();
 
