@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         vpdataAnalytics.setDebugMode(true);
 
         //set VpdataAnalytics.OptIn according to users agreement
-        vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.CONSENT);
+        vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.DEFAULT);
 
         initViews();
 
