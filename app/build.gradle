@@ -11,6 +11,33 @@ android {
         versionName "1.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
+
+    flavorDimensions "version"
+
+    productFlavors{
+        javaapp{
+            dimension "version"
+
+            applicationId "com.vpadn.analytics.java"
+        }
+
+        kotlin{
+            dimension "version"
+
+            applicationId "com.vpadn.analytics.kotlin"
+        }
+    }
+
+    sourceSets{
+        javaapp{
+            java.srcDirs = ['src/javaapp/java']
+        }
+
+        kotlin{
+            java.srcDirs = ['src/kotlin/java']
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
