@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.DEFAULT)
         initViews()
 
-        //construct a Tracker for
+        //construct a Tracker for sending event
         tracker = VpdataAnalytics.Tracker()
     }
 

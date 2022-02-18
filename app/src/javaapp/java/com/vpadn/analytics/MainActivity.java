@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
         initViews();
 
-        //construct a Tracker for
+        //construct a Tracker for sending event
         tracker = new VpdataAnalytics.Tracker();
     }
 
