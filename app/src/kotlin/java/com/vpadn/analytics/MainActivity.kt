@@ -26,10 +26,6 @@ class MainActivity : AppCompatActivity() {
     private var tracker: VpdataAnalytics.Tracker? = null
 
 
-    //TODO set your licenseKey & customerId
-    private val licenseKey = "mock_license_key"
-    private val customerId = "mock_custom_id"
-
     private val DEFAULT_EXTRA_DATA = "{\"Key1\":\"value1\",\"Key2\":\"value2\"}"
 
     private var payload = DEFAULT_EXTRA_DATA
@@ -49,14 +45,7 @@ class MainActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(arrayOf(permission.ACCESS_FINE_LOCATION, permission.ACCESS_COARSE_LOCATION, permission.READ_PHONE_STATE), PERMISSION_REQUEST_CODE)
         }
-        val vpdataAnalytics = VpdataAnalytics
 
-        //just for debug mode, remember to set to false before app release!!!
-        //need to be set before vpdataAnalytics.initialize
-        vpdataAnalytics.setDebugMode(true)
-
-        //set VpdataAnalytics.OptIn according to users agreement
-        vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.DEFAULT)
         initViews()
 
         //construct a Tracker for sending event

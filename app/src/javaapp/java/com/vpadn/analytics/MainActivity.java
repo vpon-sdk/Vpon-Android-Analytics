@@ -39,10 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String LT = "MainActivity";
 
-    //TODO set your licenseKey & customerId
-    private String licenseKey = "mock_license_key";
-    private String customerId = "mock_custom_id";
-
     private String payload = DEFAULT_EXTRA_DATA;
 
 
@@ -59,15 +55,6 @@ public class MainActivity extends AppCompatActivity {
             requestPermissions(new String[]{ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, READ_PHONE_STATE}, PERMISSION_REQUEST_CODE);
         }
 
-
-        VpdataAnalytics vpdataAnalytics = VpdataAnalytics.INSTANCE;
-
-        //just for debug mode, remember to set to false before app release!!!
-        //need to be set before vpdataAnalytics.initialize
-        vpdataAnalytics.setDebugMode(true);
-
-        //set VpdataAnalytics.OptIn according to users agreement
-        vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.DEFAULT);
 
         initViews();
 
