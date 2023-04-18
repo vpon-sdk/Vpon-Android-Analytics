@@ -19,5 +19,10 @@ class MainApplication : Application() {
 
         //set VpdataAnalytics.OptIn according to users agreement
         vpdataAnalytics.initialize(this, licenseKey, customerId, VpdataAnalytics.OptIn.DEFAULT)
+
+        //start background location collecting
+        //must call vpdataAnalytics.initialize first
+        //set your desired collecting frequency
+        VpdataAnalytics.startBackgroundLocationUpdate(VpdataAnalytics.Frequency.MID)
     }
 }
