@@ -75,4 +75,6 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
+    //for background location collecting
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
 }
