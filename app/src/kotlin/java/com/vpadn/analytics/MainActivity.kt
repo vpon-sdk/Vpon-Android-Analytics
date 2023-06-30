@@ -25,13 +25,12 @@ class MainActivity : AppCompatActivity() {
 
     private var tracker: VpdataAnalytics.Tracker? = null
 
-
     private val DEFAULT_EXTRA_DATA = "{\"Key1\":\"value1\",\"Key2\":\"value2\"}"
 
     private var payload = DEFAULT_EXTRA_DATA
 
     companion object {
-         val LT = "com.vpadn.analytics.MainActivity"
+         val LT = "MainActivity"
     }
 
 
@@ -63,9 +62,12 @@ class MainActivity : AppCompatActivity() {
             val activityWeakReference = WeakReference<Activity?>(activity)
             builder = AlertDialog.Builder(activityWeakReference.get())
             val spinner = Spinner(activityWeakReference.get())
-            val eventList = ArrayAdapter.createFromResource(activityWeakReference.get(),
+            val eventList = activityWeakReference.get()?.applicationContext?.let {
+                ArrayAdapter.createFromResource(
+                    it,
                     R.array.events,
                     android.R.layout.simple_spinner_dropdown_item)
+            }
             spinner.adapter = eventList
             val sb = StringBuilder()
             spinner.onItemSelectedListener = object : OnItemSelectedListener {
@@ -77,7 +79,7 @@ class MainActivity : AppCompatActivity() {
                             }
                             val listener = o as EventSelectedListener
                             listener.onEventSelected(sb.toString())
-                            dialog.dismiss()
+                            dialog?.dismiss()
                         }
                     }
                 }
@@ -119,7 +121,7 @@ class MainActivity : AppCompatActivity() {
                 if (eventSelectedListener != null) {
                     spinnerFragment.setCustomListener(eventSelectedListener)
                 }
-                spinnerFragment.show(getSupportFragmentManager(), "spinner")
+                spinnerFragment.show(supportFragmentManager, "spinner")
             }
         }
     }
